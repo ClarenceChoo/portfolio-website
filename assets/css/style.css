@@ -465,6 +465,10 @@ h1 {
 
 /* Responsive Design for Smaller Screens */
 @media (max-width: 768px) {
+  #projects > h2{
+    font-size: 2em;
+  }
+  
   .project-card {
     padding: 15px;
     margin: 0 auto;
