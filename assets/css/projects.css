@@ -1,0 +1,172 @@
+/* Base Styles (Desktop and Larger Screens) */
+h2 {
+    font-size: 3em;
+    color: #FFD700;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.projects-container {
+    display: flex; /* Use flexbox to ensure a vertical stack */
+    flex-direction: column; /* Stack children vertically */
+    gap: 40px; /* Add space between each project */
+    max-width: 1200px; /* Limit the width for alignment */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 20px; /* Add padding for spacing */
+}
+
+.project-details {
+    opacity: 0; /* Start hidden */
+    transform: translateY(50px); /* Start slightly below its final position */
+    transition: opacity 0.6s ease, transform 0.6s ease; /* Smooth transition for fade and slide */
+
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* 1:2 ratio for image and description */
+    align-items: start; /* Align items at the top */
+    gap: 20px; /* Space between image and description */
+    padding: 20px;
+    border-radius: 8px; /* Optional rounded corners */
+    background-color: #2A2A2A; /* Background color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow */
+    overflow: hidden; /* Prevent any content overflow */
+}
+
+/* Visible state of the project details */
+.project-details.in-view {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Reset position */
+}
+
+.project-details img {
+    width: 100%; /* Makes the image fill the container width */
+    min-height: 300px;
+    object-fit: cover; /* Ensures the image scales proportionally and fills the area */
+    border-radius: 8px; /* Optional: Adds rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Optional: Adds a subtle shadow */
+}
+
+.project-description {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: space-between; /* Space out title, text, and button */
+    gap: 15px; /* Consistent spacing between elements */
+    height: 100%; /* Match height of the parent container */
+}
+
+.project-description h3 {
+    font-size: 1.8em;
+    color: #FFD700;
+    margin: 0; /* Remove default margin */
+}
+
+.project-description ul {
+    font-size: 1.2em;
+    text-align: left;
+    color: #b3b3b3;
+    line-height: 1.5;
+    margin: 0; /* Remove default margin */
+    flex-grow: 1; /* Allows the paragraph to expand, pushing the button to the bottom */
+}
+
+.project-links {
+    margin-top: auto; /* Push the button to the bottom of the description */
+    padding: 10px 20px;
+    background-color: #FFD700; /* Gold button */
+    color: #1C1C1C; /* Dark text */
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.project-links:hover {
+    background-color: #FFC300; /* Lighter gold on hover */
+}
+
+.separator {
+    width: 80%; /* Adjust the width to make it slightly smaller than the container */
+    height: 2px; /* Thickness of the line */
+    background-color: #FFFFFF; /* White line */
+    margin: 20px auto; /* Center the line horizontally and add vertical spacing */
+    border-radius: 1px; /* Rounded edges for a smoother look */
+    opacity: 0.6; /* Slightly faded for subtle styling */
+}
+
+/* Responsive Design for Tablets */
+@media (max-width: 1024px) {
+    h2 {
+        font-size: 2.5em;
+    }
+
+    .projects-container {
+        padding: 15px; /* Reduce padding for smaller screens */
+    }
+
+    .project-details {
+        grid-template-columns: 1fr; /* Stack image and description vertically */
+        gap: 15px; /* Smaller gap */
+        text-align: center; /* Center-align text for better appearance */
+    }
+
+    .project-details img {
+        min-height: 250px; /* Reduce image height for smaller screens */
+    }
+
+    .project-description ul {
+        font-size: 1em; /* Slightly smaller text */
+    }
+
+    .separator {
+        width: 90%; /* Adjust separator width */
+    }
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 2em;
+    }
+
+    .project-details {
+        gap: 10px; /* Reduce gap between image and description */
+    }
+
+    .project-description ul {
+        font-size: 0.9em;
+        line-height: 1.4; /* Adjust line height for readability */
+    }
+
+    .project-description h3 {
+        font-size: 1.4em; /* Reduce title size */
+    }
+
+    .project-links {
+        font-size: 1em;
+        padding: 8px 15px; /* Reduce button padding */
+    }
+
+    .separator {
+        width: 95%; /* Make separator width more responsive */
+    }
+}
+
+/* Additional Styling for Extra Small Screens */
+@media (max-width: 480px) {
+    h2 {
+        font-size: 1.8em;
+    }
+
+    .project-details img {
+        min-height: 200px; /* Further reduce image height */
+    }
+
+    .project-links {
+        font-size: 0.9em;
+        padding: 6px 12px; /* Further reduce button padding */
+    }
+
+    .separator {
+        width: 100%; /* Extend separator to full width */
+    }
+}
